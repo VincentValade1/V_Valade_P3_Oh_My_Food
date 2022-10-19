@@ -12,18 +12,13 @@ $color-tertiary: #99E2D0;
         .card_restaurant
         {
             width: 23%;
-            
         }
     }
 
-    .box_menu_restaurant
+    .menu_restaurant
     {
-        // background: linear-gradient(#FF79DA,#99E2D0,#9356DC);        
-        .menu_restaurant
-        {
-            width: 70%;
-            margin-inline: auto;
-        }
+        width: 70%;
+        margin-inline: auto;
     }
 }
 
@@ -33,30 +28,21 @@ $color-tertiary: #99E2D0;
     {
         flex-direction: row;
     
-
         .card_fonctionnement
         {
-            
-            background-color: blue;
-            margin-right: 2%;
+            margin-right: 10px;
         }
-
     }
 
     footer
     {
-        display: flex;
         flex-direction: row;
-        height: auto;
+        height: 80px;
         justify-content: space-around;
-        padding: 30px 0;
-        
-        div
-        {
-            flex-direction: column;
-        }
-
-        p, a
+        padding-top: 30px;
+        align-items: center;
+    
+        #logo_footer, a
         {
             margin: 0;
         }

@@ -154,6 +154,11 @@ h1 {
   margin: 32px 0 0 0;
 }
 
+h2 {
+  margin-top: 40px;
+  margin-bottom: 25px;
+}
+
 h1, h2 {
   font-size: 21px;
 }
@@ -175,12 +180,12 @@ h4 {
   margin: 0;
 }
 
-h5 {
+h5, .ovale_button {
   font-weight: 400;
+}
+
+h5 {
   margin-bottom: 20px;
-  width: -webkit-fit-content;
-  width: -moz-fit-content;
-  width: fit-content;
   position: relative;
 }
 h5::before {
@@ -201,7 +206,7 @@ h5:hover::before {
   width: 100vw;
   height: 100vh;
   position: fixed;
-  z-index: 2;
+  z-index: 1;
   background: rgba(255, 255, 255, 0.788);
   -webkit-animation: loader_closing 0.5s 5s linear forwards;
           animation: loader_closing 0.5s 5s linear forwards;
@@ -225,12 +230,12 @@ h5:hover::before {
 #loader_page .spinning_box::before {
   content: "";
   position: absolute;
+  border-radius: 200px;
+  border: 5px solid transparent;
   left: 5px;
   right: 5px;
   top: 5px;
   bottom: 5px;
-  border-radius: 200px;
-  border: 5px solid transparent;
   border-top-color: #FF79DA;
   border-bottom-color: #FF79DA;
   -webkit-animation: spin_reverse 2s ease-in-out infinite;
@@ -239,12 +244,12 @@ h5:hover::before {
 #loader_page .spinning_box::after {
   content: "";
   position: absolute;
+  border-radius: 200px;
+  border: 5px solid transparent;
   left: 15px;
   right: 15px;
   top: 15px;
   bottom: 15px;
-  border-radius: 200px;
-  border: 5px solid transparent;
   border-top-color: #99E2D0;
   border-bottom-color: #99E2D0;
   -webkit-animation: spin 4s ease-in-out infinite;
@@ -260,7 +265,6 @@ h5:hover::before {
   box-shadow: 0 0 13px rgb(187, 187, 187);
   background: linear-gradient(#FF79DA, #9356DC);
   color: white;
-  font-weight: 400;
   text-align: center;
 }
 .ovale_button:hover {
@@ -314,21 +318,14 @@ header .back_to_main_arrow {
 .box_exploration p {
   font-size: 16px;
   font-weight: 300;
-  width: 95%;
-  margin: 10px 0 25px 0;
+  margin: 10px 20px 25px 20px;
 }
 
 .fonctionnement_section {
   padding-inline: 20px;
   padding-bottom: 40px;
-  width: 100%;
 }
-.fonctionnement_section h2 {
-  margin-top: 40px;
-  margin-bottom: 25px;
-}
-.fonctionnement_section .box_cards_fonctionnement .card_fonctionnement {
-  background-color: rgb(243, 243, 243);
+.fonctionnement_section .card_fonctionnement {
   border-radius: 15px;
   box-shadow: 0 0 13px rgb(187, 187, 187);
   align-items: center;
@@ -338,14 +335,14 @@ header .back_to_main_arrow {
   height: 63px;
   width: 95%;
 }
-.fonctionnement_section .box_cards_fonctionnement .card_fonctionnement:hover {
+.fonctionnement_section .card_fonctionnement:hover {
   background-color: #efe6fa;
   box-shadow: 0 0 13px #a2a2a2;
 }
-.fonctionnement_section .box_cards_fonctionnement .card_fonctionnement:hover .fonctionnement_icon {
+.fonctionnement_section .card_fonctionnement:hover .fonctionnement_icon {
   color: #9356DC;
 }
-.fonctionnement_section .box_cards_fonctionnement .card_fonctionnement .number_icon {
+.fonctionnement_section .card_fonctionnement .number_icon {
   width: 20px;
   height: 20px;
   line-height: 20px;
@@ -357,21 +354,15 @@ header .back_to_main_arrow {
   position: relative;
   left: -10px;
 }
-.fonctionnement_section .box_cards_fonctionnement .card_fonctionnement .fonctionnement_icon {
+.fonctionnement_section .card_fonctionnement .fonctionnement_icon {
   margin-right: 22px;
   margin-left: 8px;
   color: grey;
 }
 
 .restaurants_section {
-  padding-inline: 20px;
-  padding-top: 30px;
-  padding-bottom: 30px;
+  padding: 5px 20px 30px 20px;
   background-color: rgb(243, 243, 243);
-  width: 100%;
-}
-.restaurants_section .box_cards_restaurants {
-  width: 100%;
 }
 
 .etiquette_nouveau {
@@ -382,7 +373,7 @@ header .back_to_main_arrow {
   background-color: #99E2D0;
   position: absolute;
   padding: 6px 14px 6px 14px;
-  color: #499481;
+  color: #278870;
   font-size: 12px;
   border-radius: 2px;
   top: 13px;
@@ -390,16 +381,14 @@ header .back_to_main_arrow {
 }
 
 .card_restaurant {
-  width: 100%;
   height: 220px;
   margin-bottom: 20px;
   border-radius: 15px;
   box-shadow: 0 0 13px rgb(187, 187, 187);
-  background-color: white;
 }
 .card_restaurant:hover {
   transform: scale(1.05);
-  transition: all 0.2s ease-in;
+  transition: all 0.2s ease-in-out;
 }
 .card_restaurant img {
   border-radius: 15px 15px 0 0;
@@ -433,27 +422,26 @@ header .back_to_main_arrow {
 footer {
   display: flex;
   flex-direction: column;
-  width: 100%;
   height: 165px;
   background-color: rgb(51, 51, 51);
   padding: 20px 20px 30px 20px;
   color: white;
 }
-footer a {
+footer #logo_footer {
   font-family: "Shrikhand", cursive;
   font-weight: 100;
   font-size: 15px;
   margin-bottom: 15px;
-  color: white;
 }
 footer div {
   align-items: center;
 }
-footer p, footer #mailto {
+footer a {
   margin: 4px 0 4px 0;
   font-size: 13px;
   font-weight: 400;
   font-family: "Roboto", sans-serif;
+  color: white;
 }
 footer i {
   width: 20px;
