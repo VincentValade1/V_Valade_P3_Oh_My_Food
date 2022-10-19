@@ -1,0 +1,66 @@
+$color-primary: #9356DC;
+$color-secondary: #FF79DA;
+$color-tertiary: #99E2D0;
+
+@media (min-width: 992px)
+{    
+    .box_cards_restaurants
+    {
+        flex-direction: row;
+        justify-content: space-between;
+
+        .card_restaurant
+        {
+            width: 23%;
+            
+        }
+    }
+
+    .box_menu_restaurant
+    {
+        // background: linear-gradient(#FF79DA,#99E2D0,#9356DC);        
+        .menu_restaurant
+        {
+            width: 70%;
+            margin-inline: auto;
+        }
+    }
+}
+
+@media (min-width: 767px)
+{
+   .box_cards_fonctionnement
+    {
+        flex-direction: row;
+    
+
+        .card_fonctionnement
+        {
+            
+            background-color: blue;
+            margin-right: 2%;
+        }
+
+    }
+
+    footer
+    {
+        display: flex;
+        flex-direction: row;
+        height: auto;
+        justify-content: space-around;
+        padding: 30px 0;
+        
+        div
+        {
+            flex-direction: column;
+        }
+
+        p, a
+        {
+            margin: 0;
+        }
+    } 
+}
+
+
