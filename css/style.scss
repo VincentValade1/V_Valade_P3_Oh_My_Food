@@ -82,15 +82,32 @@ $grey-section: rgb(243, 243, 243);
 /* keyframes check_plat */
 @keyframes slide 
 {
-    100%{
-        width: 50px;
+    from{
+        width: 0px;
+        transform: translateX(+50px);
     }
+    to{
+        width: 50px;
+        transform: translateX(0);
+    }
+}
+
+@keyframes slide_back
+{
+    from{
+        width: 50px;
+        transform: translateX(0);
+    }  
+    to{
+        width: 0px;
+        transform: translateX(+50px);
+    }  
 }
 
 @keyframes check_spinning 
 {
     100%{
-        transform: rotate(+1turn);
+        transform: rotate(+2turn);
     }
 }
 
@@ -153,6 +170,16 @@ img
     align-items: center;
 }
 
+.logo_header, h4, #logo_footer
+{
+    font-family: 'Shrikhand', cursive;
+}
+
+.logo_header
+{
+    font-size: 25px;
+}
+
 h1
 {
     width: 68%;
@@ -183,7 +210,6 @@ h3
 
 h4
 {
-    font-family: 'Shrikhand', cursive;
     font-size: 25px;
     font-weight: lighter;
     margin: 0;
@@ -207,10 +233,13 @@ h5
         width: 35px;
         bottom: -5px;
         background-color: $color-tertiary;
-        transition:  0.5s;
+        transition:  0.5s ease-in-out;
     }
-    
-    &:hover::before
+}
+
+.bloc_plats:hover h5 /* élargissement de la bordure verte des h5 au survol d'un bloc de plats correspondant */
+{
+    &::before
     {
         width: 100%;
     }
@@ -340,7 +369,7 @@ header
 {   
     text-align: center;
     padding-bottom: 50px;
-    background-color:rgb(243, 243, 243);
+    background-color: $grey-section;
 
     p
     {
@@ -478,7 +507,6 @@ footer
     
     #logo_footer
     {
-        font-family: 'Shrikhand', cursive;
         font-weight: 100;
         font-size: 15px;
         margin-bottom: 15px;
@@ -513,6 +541,7 @@ footer
     {
         width: 100%;
         max-height: 300px;
+        height:230px;
         z-index: 0;
     }
 
@@ -551,28 +580,31 @@ footer
     box-shadow: 0 0 13px rgb(187, 187, 187);
     overflow: hidden;
     @include flex_row_space_between;
-    animation: dish_pop_up 1s cubic-bezier(.49,.11,0,1) backwards;
+    animation: dish_pop_up 1.5s cubic-bezier(.49,.11,0,1) backwards; 
 
     &:nth-of-type(2)
     {
         animation-delay: 100ms;
     }
+    
     &:nth-of-type(3)
     {
         animation-delay: 200ms;
     }
+    
     &:nth-of-type(4)
     {
         animation-delay: 300ms;
     }
-
+    
     &:hover .box_anim_check
     {
-        animation: slide 0.4s ease-in-out forwards;
+        animation: slide 0.6s ease-in-out both;
     }
+    
     &:hover .icone_check
     {
-        animation: check_spinning 0.4s ease-in-out forwards;
+        animation: check_spinning 0.6s ease-in-out both;
     }
 
     .box_infos_plat
@@ -611,9 +643,11 @@ footer
         display: flex;
         align-items: center;
         justify-content: center;
-        width: 0px;
         border-radius: 0 15px 15px 0;
         background-color: $color-tertiary;
+        width: 0px;
+        animation: slide_back 0.4s ease-in-out;
+        transform: translateX(0px);
         
         i
         {
