@@ -7,7 +7,7 @@
     transform: rotate(1turn);
   }
   100% {
-    transform: rotate(0turn);
+    transform: rotate(-1turn);
   }
 }
 @keyframes spin {
@@ -18,7 +18,7 @@
     transform: rotate(1turn);
   }
   100% {
-    transform: rotate(0turn);
+    transform: rotate(-1turn);
   }
 }
 @-webkit-keyframes spin_reverse {
@@ -239,6 +239,32 @@ h5::before {
   width: 100%;
 }
 
+.box_heart_icon {
+  width: 24px;
+  height: 24px;
+}
+.box_heart_icon:hover .heart_icon_hover {
+  opacity: 1;
+  transition: opacity 0.6s ease-out;
+}
+.box_heart_icon:hover .heart_icon {
+  opacity: 0;
+  transition: opacity 0.2s ease-in;
+}
+.box_heart_icon .heart_icon_hover {
+  position: absolute;
+  z-index: 1;
+  background: linear-gradient(#FF79DA, #9356DC);
+  color: transparent; /* pour rendre le coeur noir transparent et ne montrer que le background color */
+  -webkit-background-clip: text;
+          background-clip: text; /* pour limiter le background au contour du coeur */
+  opacity: 0;
+}
+
+.heart_icon, .heart_icon_hover {
+  font-size: 21px;
+}
+
 /* LOADER */
 #loader_page {
   width: 100vw;
@@ -262,8 +288,8 @@ h5::before {
   border-radius: 200px;
   border-top-color: #9356DC;
   border-bottom-color: #9356DC;
-  -webkit-animation: spin 4s ease-in-out infinite, spin_fade_out 4s 1s ease-in-out forwards;
-          animation: spin 4s ease-in-out infinite, spin_fade_out 4s 1s ease-in-out forwards;
+  -webkit-animation: spin 4s ease-in-out forwards, spin_fade_out 4s 1s ease-in-out forwards;
+          animation: spin 4s ease-in-out forwards, spin_fade_out 4s 1s ease-in-out forwards;
 }
 #loader_page .spinning_box::before {
   content: "";
@@ -310,26 +336,8 @@ h5::before {
   background: linear-gradient(#ff94e1, #a978e3);
 }
 
-.heart_icon, .heart_icon_hover {
-  font-size: 21px;
-}
-
-.heart_icon_hover {
-  position: absolute;
-  z-index: 1;
-  background: linear-gradient(#FF79DA, #9356DC);
-  color: transparent;
-  -webkit-background-clip: text;
-          background-clip: text;
-  opacity: 0;
-}
-
 header {
   height: 55px;
-}
-header img {
-  height: 44%;
-  margin: auto;
 }
 header .back_to_main_arrow {
   position: absolute;
@@ -360,8 +368,7 @@ header .back_to_main_arrow {
 }
 
 .fonctionnement_section {
-  padding-inline: 20px;
-  padding-bottom: 40px;
+  padding: 0 20px 40px;
 }
 .fonctionnement_section .card_fonctionnement {
   border-radius: 15px;
@@ -382,7 +389,6 @@ header .back_to_main_arrow {
 }
 .fonctionnement_section .card_fonctionnement .number_icon {
   width: 20px;
-  height: 20px;
   line-height: 20px;
   color: white;
   text-align: center;
@@ -439,18 +445,6 @@ header .back_to_main_arrow {
   border-radius: 0 0 15px 15px;
   justify-content: space-between;
 }
-.card_restaurant .bloc_infos_card .box_heart_icon {
-  width: 24px;
-  height: 24px;
-}
-.card_restaurant .bloc_infos_card .box_heart_icon:hover .heart_icon_hover {
-  opacity: 1;
-  transition: opacity 0.6s ease-out;
-}
-.card_restaurant .bloc_infos_card .box_heart_icon:hover .heart_icon {
-  opacity: 0;
-  transition: opacity 0.2s ease-in;
-}
 .card_restaurant .bloc_infos_card p {
   font-weight: 300;
   margin-top: 0;
@@ -484,7 +478,7 @@ footer i {
   width: 20px;
 }
 
-/* PAGE A LA FRANCAISE */
+/* PAGE MENU */
 .box_menu_restaurant {
   width: 100%;
 }
@@ -505,28 +499,20 @@ footer i {
   justify-content: space-between;
   padding-right: 15px;
 }
-.box_menu_restaurant .menu_restaurant .bloc_titre_menu .box_heart_icon:hover .heart_icon_hover {
-  opacity: 1;
-  transition: opacity 0.6s ease-out;
-}
-.box_menu_restaurant .menu_restaurant .bloc_titre_menu .box_heart_icon:hover .heart_icon {
-  opacity: 0;
-  transition: opacity 0.2s ease-in;
-}
 .box_menu_restaurant .box_bouton_commander {
   margin-top: 25px;
 }
 
 .card_plat {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
   height: 60px;
   background-color: white;
   border-radius: 15px;
   margin-bottom: 12px;
   box-shadow: 0 0 13px rgb(187, 187, 187);
   overflow: hidden;
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
   -webkit-animation: dish_pop_up 1.5s cubic-bezier(0.49, 0.11, 0, 1) backwards;
           animation: dish_pop_up 1.5s cubic-bezier(0.49, 0.11, 0, 1) backwards;
 }
@@ -572,15 +558,12 @@ footer i {
   font-size: 13px;
 }
 .card_plat .box_anim_check {
-  display: flex;
   align-items: center;
   justify-content: center;
   border-radius: 0 15px 15px 0;
   background-color: #99E2D0;
-  width: 0px;
-  -webkit-animation: slide_back 0.4s ease-in-out;
-          animation: slide_back 0.4s ease-in-out;
-  transform: translateX(0px);
+  -webkit-animation: slide_back 0.6s ease-in-out forwards;
+          animation: slide_back 0.6s ease-in-out forwards;
 }
 .card_plat .box_anim_check i {
   color: white;
