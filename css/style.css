@@ -179,7 +179,7 @@ img {
   align-items: center;
 }
 
-.logo_header, h4, #logo_footer {
+.logo_header, #logo_footer {
   font-family: "Shrikhand", cursive;
 }
 
@@ -187,56 +187,15 @@ img {
   font-size: 25px;
 }
 
-h1 {
-  width: 68%;
-  margin: 32px 0 0 0;
-}
-
-h2 {
+.fonctionnement_section h2, .restaurants_section h2 {
   margin-top: 40px;
   margin-bottom: 25px;
-}
-
-h1, h2 {
   font-size: 21px;
-}
-
-h1, h2, h3 {
   font-weight: 900;
 }
 
-h3 {
-  font-size: 16px;
-  margin-bottom: 4px;
-  margin-top: 0;
-}
-
-h4 {
-  font-size: 25px;
-  font-weight: lighter;
-  margin: 0;
-}
-
-h5, .ovale_button {
+.ovale_button {
   font-weight: 400;
-}
-
-h5 {
-  margin-bottom: 20px;
-  position: relative;
-}
-h5::before {
-  content: "";
-  position: absolute;
-  height: 2px;
-  width: 35px;
-  bottom: -5px;
-  background-color: #99E2D0;
-  transition: 0.5s ease-in-out;
-}
-
-.bloc_plats:hover h5::before {
-  width: 100%;
 }
 
 .box_heart_icon {
@@ -361,6 +320,12 @@ header .back_to_main_arrow {
   padding-bottom: 50px;
   background-color: rgb(243, 243, 243);
 }
+.box_exploration h1 {
+  width: 68%;
+  font-size: 21px;
+  font-weight: 900;
+  margin: 32px 0 0 0;
+}
 .box_exploration p {
   font-size: 16px;
   font-weight: 300;
@@ -392,7 +357,7 @@ header .back_to_main_arrow {
   line-height: 20px;
   color: white;
   text-align: center;
-  font-size: 10px;
+  font-size: 12px;
   border-radius: 10px;
   background-color: #9356DC;
   position: relative;
@@ -438,6 +403,12 @@ header .back_to_main_arrow {
   border-radius: 15px 15px 0 0;
   width: 100%;
   height: 70%;
+}
+.card_restaurant h3 {
+  font-size: 16px;
+  font-weight: 900;
+  margin-bottom: 4px;
+  margin-top: 0;
 }
 .card_restaurant .bloc_infos_card {
   height: 30%;
@@ -498,6 +469,29 @@ footer i {
 .box_menu_restaurant .menu_restaurant .bloc_titre_menu {
   justify-content: space-between;
   padding-right: 15px;
+}
+.box_menu_restaurant .menu_restaurant .bloc_titre_menu h1 {
+  font-family: "Shrikhand", cursive;
+  font-size: 25px;
+  font-weight: lighter;
+  margin: 0;
+}
+.box_menu_restaurant .menu_restaurant h2 {
+  margin-bottom: 20px;
+  font-weight: 400;
+  position: relative;
+}
+.box_menu_restaurant .menu_restaurant h2::before {
+  content: "";
+  position: absolute;
+  height: 2px;
+  width: 35px;
+  bottom: -5px;
+  background-color: #99E2D0;
+  transition: 0.5s ease-in-out;
+}
+.box_menu_restaurant .menu_restaurant .bloc_plats:hover h2::before {
+  width: 100%;
 }
 .box_menu_restaurant .box_bouton_commander {
   margin-top: 25px;
